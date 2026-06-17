@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int sumSubarrayMins(const vector<int>& arr) {
+    int total_sum = 0;
+    int n = arr.size();
+
+    for (int i = 0; i < n; i++) {
+        int current_min = arr[i];
+        for (int j = i; j < n; j++) {
+            if (arr[j] < current_min) {
+                current_min = arr[j];
+            }
+            total_sum += current_min;
+        }
+    }
+    return total_sum;
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    if (cin >> n) {
+        vector<int> arr(n);
+        for (int i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+        cout << sumSubarrayMins(arr) << "\n";
+    }
+
+    return 0;
+}
