@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int hh, mm, ss;
+    char colon1, colon2, p_or_a, m;
+    
+    if (cin >> hh >> colon1 >> mm >> colon2 >> ss >> p_or_a >> m) {
+        if (p_or_a == 'A' || p_or_a == 'a') {
+            if (hh == 12) {
+                hh = 0;
+            }
+        } else if (p_or_a == 'P' || p_or_a == 'p') {
+            if (hh != 12) {
+                hh += 12;
+            }
+        }
+
+        if (hh < 10) cout << "0";
+        cout << hh << ":";
+        
+        if (mm < 10) cout << "0";
+        cout << mm << ":";
+        
+        if (ss < 10) cout << "0";
+        cout << ss << "\n";
+    }
+
+    return 0;
+}
