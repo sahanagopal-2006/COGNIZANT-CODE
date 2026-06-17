@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int num1,num2;
+    cin>>num1>>num2;
+    int xor_result=num1^num2;
+    int count=0;
+    while(xor_result>0){
+        if(xor_result%2==1){
+            count++;
+        }
+        xor_result=xor_result/2;
+    }
+    cout<<count;
+}
